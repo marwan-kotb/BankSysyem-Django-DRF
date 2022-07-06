@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="#">
+        <title>{% block title %}Bank System{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'front/styles.css' %}" rel="stylesheet">
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+
+      
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <a id="BankSystem" class="navbar-brand" href="#">Bank System</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a id="Customers" class="nav-link active" aria-current="page" href="#">Customers</a>
+                  <a id="Accounts" class="nav-link" href="#">Accounts</a>
+                  <a id="Merchants" class="nav-link" href="#">Merchants</a>
+                  <a id="Products" class="nav-link" href="#">Products</a>
+                  <a id="CustomerPurchase" class="nav-link" href="#">Customer Purchase</a>
+                  <a id="Transactions" class="nav-link" href="#">Transactions</a>
+
+                </div>
+              </div>
+            </div>
+          </nav>
+
+        
+        <div id="wow">
+          <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div id="back" class="content">
+              <h1>Bank System</h1>
+          </div>
+        </div>
+
+
+        <div>
+            {% block body %}
+            {% endblock %}
+        </div>
+
+
+    </body>
+</html>

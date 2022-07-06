@@ -1,0 +1,261 @@
+{% extends "front/layout.html" %}
+{% load static %}
+    <link rel="shortcut icon" href="#">
+    
+{% block body %}    
+
+
+
+    
+
+    <div style="padding-bottom: 1em; font-style: italic; font-size: 18px;" id="customerbar" class="container">
+        <div class="row">
+            <div class="col-lg">
+                Name
+            </div>
+            <div class="col-sm">
+                Email
+            </div>
+            <div class="col-sm">
+                Password
+            </div>
+            <div class="col-sm">
+                Phone Number
+            </div>
+            <div class="col-sm">
+                Cash
+            </div>
+            <div class="col-lg">
+                Created At
+            </div>
+            <div class="col-lg">
+                Delete
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                   <pre></pre>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="padding-bottom: 1em; font-style: italic; font-size: 18px;" id="accountbar" class="container">
+        <div class="row">
+            <div class="col-lg">
+                Id
+            </div>
+            <div class="col-sm">
+                Customer
+            </div>
+            <div class="col-sm">
+                Account Type
+            </div>
+            <div class="col-sm">
+                Created At
+            </div>
+            <div class="col-lg">
+                Delete
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                   <pre></pre>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="padding-bottom: 1em; font-style: italic; font-size: 18px;" id="merchantbar" class="container">
+        <div class="row">
+            <div class="col-lg">
+                Name
+            </div>
+            <div class="col-sm">
+                Email
+            </div>
+            <div class="col-sm">
+                Phone Number
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                   <pre></pre>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="padding-bottom: 1em; font-style: italic; font-size: 18px;" id="productbar" class="container">
+        <div class="row">
+            <div class="col-lg">
+                Product
+            </div>
+            <div class="col-sm">
+                Merchant Name
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                   <pre></pre>
+            </div>
+        </div>
+        
+    </div>
+
+    <div style="padding-bottom: 1em; font-style: italic; font-size: 18px;" id="purchasebar" class="container">
+        <div class="row">
+            <div class="col-lg">
+                Id
+            </div>
+            <div class="col-sm">
+                Price
+            </div>
+            <div class="col-sm">
+                Customer
+            </div>
+            <div class="col-sm">
+                Product
+            </div>
+            <div class="col-sm">
+                Purchased At
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                   <pre></pre>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="data" class="container">
+    </div>      
+    
+
+
+
+    <form id="CustomerForm">
+        <div>
+            {% csrf_token %}
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="inputName" placeholder="@Mohamed" minlength="6" maxlength="15">
+            </div>
+            {% csrf_token %}    
+            <div class="form-group col-md-4">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="@Email" minlength="10" maxlength="40">
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-4">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="@Password" minlength=8>
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-4">
+            <label for="inputPhone">Phone Number</label>
+            <input type="Number"  min="0" class="form-control" id="inputPhone" placeholder="+20" minlength="10" maxlength="10">
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-4">
+                <label for="inputCity">Cash</label>
+                <input type="Number" min="1500" step="any" class="form-control" id="inputCash" minlength="4">
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-4">
+                <label for="inputCustomerType">Customer Type</label>
+                <select id="inputCustomerType" class="form-control">
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+
+    <form id="AccountForm">
+        <div class="form-group col-md-4">
+            {% csrf_token %}
+            <label for="inputAccountType">Account Type</label>
+            <select id="inputAccountType" class="form-control">
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            {% csrf_token %}
+            <label for="inputCustomers">Customers</label>
+            <select id="inputCustomers" class="form-control">
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+    <form id="MerchantForm">
+        {% csrf_token %}
+        <div class="col-lg-4">
+            <input id="merchantname" type="text" class="form-control form-control-lg" placeholder="Name" minlength="6" maxlength="15">
+          </div>
+        <div>
+            {% csrf_token %}  
+          <div class="col-lg-4">
+            <input type="email" class="form-control form-control-lg" id="merchantemail" placeholder="Email" minlength="10" maxlength="40">
+          </div>
+        </div>
+        {% csrf_token %}
+        <div class="col-lg-4">
+            <input type="number" min="0"id="merchantphone" class="form-control form-control-lg" placeholder="+20" minlength="10" maxlength="10">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+
+    <form id="ProductForm">
+        {% csrf_token %}
+        <div class="col-sm-4">
+            <input id="productname" type="text" class="form-control form-control-lg" placeholder="Product Name" minlength="6" maxlength="15">
+        </div>
+        {% csrf_token %}
+        <div class="form-group col-lg-4">
+            <label for="inputMerchants">Merchants</label>
+            <select id="inputMerchants" class="form-control">
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+
+    <form id="CustomerPurchaseForm">
+        {% csrf_token %}
+        <div class="form-group col-md-4">
+            <input id="price" min="0" type="number" class="form-control form-control-lg" placeholder="Price">
+        </div>
+        {% csrf_token %}
+        <div class="form-group col-md-4">
+            <label for="customerinput">Customers</label>
+            <select id="customerinput" class="form-control">
+            </select>
+        </div>
+        {% csrf_token %}
+        <div class="form-group col-md-4">
+            <label for="productinput">Products</label>
+            <select id="productinput" class="form-control">
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Purchase</button>
+    </form>
+
+
+
+    <div id="dynamic-view">
+        
+
+
+
+    </div>
+
+
+
+    
+
+{% endblock %}
+{% block script %}
+     <script src="{% static 'front/dynamic.js' %}"></script>
+{% endblock %}
