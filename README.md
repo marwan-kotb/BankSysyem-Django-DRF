@@ -19,6 +19,8 @@ if you need to remove them and make your migrations, run above commands
 ### the project is consist of two apps, one for backend (models, views, api), and the second for frontend (html, css, javascript)
 ### there is er digram from which it was made models
 
+#### Link Youtube of running project: https://youtu.be/2_yCkQzs8SY
+
 
 
 
