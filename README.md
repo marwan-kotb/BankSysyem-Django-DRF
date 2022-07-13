@@ -20,8 +20,8 @@
   
 ## structure of project
 the project is consist of two apps:
--one for backend (models, views, api)
--the second for frontend (html, css, javascript)
+- one for backend (models, views, api)
+- the second for frontend (html, css, javascript)
 
 ## Er diagram from which made models
 ![ER diagram](Bank-account-system-er-diagram.jpg)
